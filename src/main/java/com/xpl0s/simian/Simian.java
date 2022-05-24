@@ -3,6 +3,7 @@ package com.xpl0s.simian;
 import com.mojang.logging.LogUtils;
 import com.xpl0s.simian.entity.ModEntityTypes;
 import com.xpl0s.simian.entity.client.OrangutanRenderer;
+import com.xpl0s.simian.item.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -29,9 +30,8 @@ public class Simian
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 
-
-
         ModEntityTypes.register(eventBus);
+        ModItems.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
